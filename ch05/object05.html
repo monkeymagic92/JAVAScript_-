@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 활용 5</title>
+</head>
+<body>
+    <script>
+
+        // 객체 생성자 함수 
+        // 객체 생성자 함수 안에 메소드를 넣어서 생성하게 되면,
+        // 객체를 만들때마다 메소드가 메모리에 만들어져서 메모리의 공간도 낭비되는 현상이 발생        
+        // 객체 생성자 함수 1번 방법
+
+        function Member(no, name, age) {
+
+            // 프로퍼티(property)
+            this.no = no;
+            this.name = name;
+            this.age = age;
+
+            // 메소드
+            this.showInfo = function() {
+                return "회원번호 : " + this.no + "이름 : " + this.name + "나이 : " + this.age;  
+            }
+        }
+
+        // var members = [
+        //     new Member(1,'이재용',29),
+        //     new Member(2,'Steave',45),
+        //     new Member(3,'홍길동',31)
+        // ];
+
+        // for(var i=0; i<members.length; i++) {
+        //     document.write(members[i].showInfo() + "<br>");
+        // }
+        // document.write("<br>");
+
+        // document.write(members[0].showInfo());
+
+        
+        // 2. 객체 생성자 함수, 메소드를 프로토타입(prototype, 원형)으로 등록하여 생성
+
+        // function Member(no, name, age) {
+        //     this.no = no;
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // Member 생성자 함수의 메소드의 프로토타입
+        // 여러 객체를 생성하면 메소드또한 여러개 생성되겠지만, 프로토타입은 여러객체중에 메소드는 한개로 그한개롤 받아와서 사용함
+        // member 생성자 함수의 메소드를 포로토타입으로 만들면 메소드가 하나만 만들어져서 모든 객체에서 공유하여 사용하게 된다
+        // 따라서 메모리의 효율적사용, 속도증감 효과를 볼수 있다.
+        // Member.prototype.showInfo = function() {
+        //     return "회원번호 : " + this.no + "이름 : " + this.name + "나이 : " + this.age;  
+        // }
+
+        var members = [
+            new Member(1,'이재용',29),
+            new Member(2,'Steave',45),
+            new Member(3,'홍길동',31)
+        ];
+
+        for(var i=0; i<members.length; i++) {
+            document.write(members[i].showInfo() + "<br>");
+        }
+
+        console.log(members[0]);
+
+        
+
+        
+
+
+       
+        
+        
+
+    </script>
+</body>
+</html>

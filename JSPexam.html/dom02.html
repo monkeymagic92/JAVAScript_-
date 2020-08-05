@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 객체 2</title>
+    <style>
+        .container { width: 500px; margin: 0 auto; }
+        #img1 { width: 70px; height: 70px; }
+        #text1 { background-color: orange;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="images/js.png" alt="" id="img1">
+        <p id="text1">자바스크립트</p>
+    </div>
+
+    <script>
+        var img1 = document.querySelector("#img1");
+        img1.src = "images/js.png" // 요소의 내용을 변경
+        img1.style.width = "70px" // 요소의 스타일 속성을 변경
+        img1.style.height = "70px" // 요소의 스타일 속성을 변경
+
+        var text1 = document.querySelector("#text1") // html문서로부터 아이디값이 text1인 값으로 변경
+        text1.innerHTML = "Javascript DOM 객체"; // 요소의 내용을 변경
+        text1.style.background = "orange"; // 요소의 스타일, 속성을 변경
+
+    </script>
+</body>
+</html>

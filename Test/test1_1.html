@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2장 연습문제 1번</title>
+</head>
+<body>
+    <!-- 
+                            ㅡㅡ 삼항연산자 사용ㅡㅡ
+
+        1. 입력창을 통해 교통비, 식비, 음료비를 입력받아서 변수에 저장 (price1, price2, price3)
+        2. 이 세가지 비용의 합이 하루 적정 지출 비용인 10000을 넘었을때 얼마를 초과했는지 출력
+           하루 적정 지출 비용보다 적으면 '돈 관리를 잘 했어요!' 라고 출력
+
+           ex) 세가지 비용의 합이 15000원 이라면 '적정비용 5000원 초과!!'
+
+    -->
+
+    <script>
+        // 입력창으로부터 입력받는 모든 값은 문자열 
+        // 문자열의 값이 숫자일 때는 숫자로 계산을 하는데 밑에 var pay처럼 + 가들어가면 문자열끼리 다 더함 
+        // 그러니 Number() 사용하거나 parseInt() 로 형변환 해주기 
+
+        var price1 = Number(prompt("교통비 입력")); // Number()로 하는방식
+        var price2 = parseInt(prompt("식비 입력")); // parseInt() 로 하는방식
+        var price3 = Number(prompt("음료비 입력"));
+        
+        // + : 숫자일 때는 값을 더함,  문자열 일때는 문자열 + 문자열 연결 
+        var pay = price1 + price2 + price3;
+        var money = pay - 10000;
+
+        // 논리값 : 
+        // true : 0을 제외한 모든 숫자, 모든 문자열, 
+        // false : 숫자는 0, undefined(변수에 아무 값도 넣지않은 최초변수값), null, ''빈문자열
+        if (pay > 10000){
+            document.write(money +"원 초과 돈관리 못함");
+            
+        } else {
+            document.write("돈관리 잘함");
+
+        }
+
+    </script>
+</body>
+</html>

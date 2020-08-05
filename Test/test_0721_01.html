@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0721 1번</title>
+</head>
+<body>
+    <!-- 
+        1. 월을 입력받아서 계절을 판별하는 프로그램
+        입력 : 좋아하는 월을 입력하세요.
+        출력 : 5월은 봄입니다. 이미지도 출력
+        
+        2. switch ~ case 문으로 만들기
+     -->
+     
+     <script>
+         var month = Number(prompt("좋아하는 월 입력"));
+         
+         switch(month){
+            case 12: case 1: case 2:
+                document.write("겨울");
+                document.write('<img src="images/winter.png">');
+                break;
+            case 3: case 4: case 5:
+                document.write("봄");
+                document.write('<img src="images/spring.png">');
+                break;
+            case 6: case 7: case 8:
+                document.write("여름");
+                document.write('<img src="images/summer.png">');
+                break;
+            case 9: case 10: case 11:
+                document.write("가을");
+                document.write('<img src="images/fall.png">');
+                break;
+            default:
+                document.write("1~12숫자만 입력하세요");
+        
+         }
+         
+
+
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 활용 6</title>
+    <!-- 
+        함수의 종류
+        1. 기본 함수
+        2. 익명 함수
+        3. 즉시 실행 함수(즉치 함수)
+        4. 콜백 함수
+        - 익명 함수, 콜백 함수의 활용 - 이벤트를 다루는 함수에서 많이 활용
+     -->
+</head>
+<body>
+    <script>
+        // 1. 기본 함수
+        // 함수 생성(정의)
+        function add(n1, n2) {
+            return n1 + n2;
+        }
+        // 함수 호출(사용)
+        var result = add(10,20);
+        document.write(result + "<br><hr>");
+
+
+        // 2. 익명 함수(anonymous function)
+        // 익명 함수 목적 : 함수를 담아 호출시에 전달하고자 함.
+        // 익명 함수 생성
+        var add2 = function(a, b) {
+            return a + b;
+        }
+
+        // 익명 함수 사용
+        // 은근 많이사용 함
+        var result2 = add2(10,5550);
+        document.write(result2 + "<br><hr>");
+
+
+        // 3. 즉시 실행 함수
+        // 함수 생성과 동시에 실행(사용)
+        var result3 = (function(a, b) {
+            return a + b;
+        }(50, 60));
+        
+        document.write(result3 + "<br><hr>");
+
+
+        // 4. 콜백 함수
+        // 어떤 함수의 매개변수로만 사용되는 함수 
+        // f2가 콜백함수 
+        function f1(f2, n) {
+            document.write("콜백함수를 " + n + "번 호출하였습니다<br>");
+            for(var i=0; i<n; i++) {
+                f2();
+            }
+        }
+
+        // 4-1 익명함수 생성
+        var f3 = function() {
+            document.write("Hello Javascript!<br>");
+        }
+
+        // 4-2 함수 호출 
+        f1(f3, 5);
+
+        
+        
+        
+    </script>
+</body>
+</html>

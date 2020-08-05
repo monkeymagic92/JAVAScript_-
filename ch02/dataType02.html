@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>형변환 함수</title>
+</head>
+<body>
+    <h3>형변환 함수</h3>
+    <p>데이터타입(자료형)을 변환하는 함수</p>
+    <p>
+        1. String() : 숫자를 문자로 변환하는 함수<br>
+        2. Number() : 문자를 숫자로 변환하는 함수<br>
+        3. Boolean() : 비논리형을 논리형으로 변환하는 함수<br>
+        (1) 논리형 : true, false 둘 중의 하나<br>
+        (2) true : 문자열, 숫자 0을 제외한 모든 음,양수(실수포함) 값<br>
+        (3) false : 0, null, undefined<br>
+        4. toString() : 숫자를 문자로 변환하는 함수<br>
+        5. parseInt() : 문자를 정수로 변환하는 함수<br>
+        6. parseFloat() : 문자를 실수로 변환하는 함수<br>
+
+    </p>
+
+    <script>
+        var a = "10", b = 20, c;
+        c = a + b; // 문자 + 숫자 = 문자열
+        console.log("결과 : " + c);
+        console.log("데이터 타입 : " + typeof c); // String
+
+        c = Number(a) + b; // a의 값을 숫자로 바꿔서 더함, 그렇다고 a값을 실제로 숫자형으로 바꾼것은 아님 (임시적으로 바꾼것)
+        console.log("결과 : " + c);
+        console.log("데이터 타입 : " + typeof c); // Number
+
+
+        // 두번째 값을 사용할때에만 a변수를 숫자로 바꿧고 원래 a값은 문자열"10" 임
+        console.log("결과 : " + a);
+        console.log("데이터 타입 : " + typeof a); // string
+
+        var a = Number(a);
+        console.log("결과 : " + a);
+        console.log("데이터 타입 : " + typeof a);
+        
+        var x = "ten";
+        x = Number(x);
+        console.log("결과 : " + x); // NaN : not a number(숫자가 아님)
+        console.log("데이터 타입 : " + typeof x);
+
+        var y = 100;
+        var z = String(y);
+        console.log("결과 : " + z);
+        console.log("데이터 타입 : " + typeof z);
+
+        // 논리형 : true, false 둘 중의 하나
+        // true : 문자열, 숫자 0을 제외한 모든 음,양수(실수포함) 값
+        // false : 0, null, undefined
+
+        // 문자열
+        var h = Boolean("자바스크립트");
+        console.log("결과 : " + h);
+        console.log("데이터 타입 : " + typeof h);
+
+        // 0 
+        var l = Boolean(0);
+        console.log("결과 : " + l);
+        console.log("데이터 타입 : " + typeof l);
+
+        // null
+        var h = Boolean(null);
+        console.log("결과 : " + h);
+        console.log("데이터 타입 : " + typeof h);
+
+        // undefined
+        var g;
+        console.log("결과 : " + Boolean(g));
+        console.log("데이터 타입 : " + typeof g);
+
+        // 빈문자 (띄워쓰기 안됨, 말그대로 문자가 하나도없어야됨 = 띄워쓰기도 문자)
+        var i = "";
+        console.log("결과 : " + Boolean(i));
+        console.log("데이터 타입 : " + typeof i);
+
+        /////////////
+        // toString()
+        var aa = 10;
+        aa = aa.toString();
+        console.log("결과 : " + aa);
+        console.log("데이터 타입 : " + aa);
+
+        // parseInt();
+        var bb = "30";
+        bb = parseInt(bb);
+        console.log("결과 : " + bb);
+        console.log("데이터 타입 : " + typeof bb);
+
+        // parseFloat(); 문자열 소수를 숫자 소수로..
+        var cc = "3.14";
+        cc = parseFloat(cc);
+        console.log("결과 : " + cc);
+        console.log("데이터 타입 : " + typeof cc);
+        
+        
+        
+        
+
+    </script>
+</body>
+</html>

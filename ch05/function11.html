@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수 없는 함수 호출</title>
+</head>
+<body>
+    <script>
+        // 함수 생성
+        // 함수의 매개변수가 없을 때, 함수 호출시에 전달되는 매개변수는 arguments라는 
+        // 함수 내부 배열로 저장
+        // aguments (함수 -> 내부 함수) : 함수 내부에 존재하는 배열 
+        // 자바로 치면 (!가변인자!) 같은 느낌
+
+        function sum() {
+            var sum = arguments[0] + arguments[1] + arguments[2] + arguments[3];
+
+            return sum;
+        }
+
+        function sum1() {
+            var tot = 0;
+            for(var i=0; i<arguments.length; i++) {
+                tot += arguments[i];
+            }
+            return tot;
+        } 
+
+
+        // 함수 호출
+        var result = sum(1,2,3,4);
+        document.write(result + "<br><hr>");
+
+        var result2 = sum1(1,2,3,4,5,6,7,8,9,10);
+        document.write(result2);
+    </script>
+</body>
+</html>

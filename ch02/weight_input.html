@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체중 관리 프로그램 (p.57)</title>
+</head>
+<body>
+    <!-- 
+                            ㅡㅡ 삼항 연산자사용 ㅡㅡ
+
+        1. 입력창을 통해서 이름(name), 키(height), 몸무게(weight), 3개의 값을 입력받아 변수에 저장
+        2. 표준 몸무게 계산법 (키 - 100) * 0.9을 변수에 저장
+        3. 나의 몸무게가 표준 몸무게의 +5 또는 -5의 사이에 있다면 '적정 체중입니다.'
+           나의 몸무게가 표준 몸무게를 벗어난다면 '적정 몸무게가 아닙니다.'
+     -->
+
+          
+
+    <script>
+         
+        var name = prompt("이름 입력");
+        var height = Number(prompt("키 입력"));
+        var weight = Number(prompt("몸무게 입력"));
+        var normal = (height - 100) * 0.9;
+
+        var max = normal - 5;
+        var min = normal + 5;
+        var result = weight >= min && weight<=max;
+
+
+        if(result == true){
+            document.write(name + "님은 적정체중");
+            document.write(result);
+        } else {
+            document.write(name + "님은 비정상")
+            document.write(result);
+        }
+
+     </script>
+
+
+</body>
+</html>

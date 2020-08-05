@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 활용 4</title>
+</head>
+<body>
+    <script>
+        // 회원 객체 - 회원번호, 회원이름, 회원나이
+        // 배열 : [ ]  객체 : { }
+
+        // 1. 싱글톤 객체 - 객체 1개
+        // 변수로 각각 생성하는 것보다 객체로 묶어 생성하는것이 효율적인 방법
+        // 객체를 따로 생성하고, 처리도 따로 해야하는 단점
+        var m1 = {
+            no:112233,
+            name:'이익준',
+            age:40
+        }
+        var m2 = { no:445566, name:'김희준', age:50 }
+        var m3 = { no:778899, name:"안이기", age:1 }
+        var m5 = { no:778899, name:"몰라", age:65 }
+        var m4 = { no:112211, name:"이순딘신", age:14 }
+
+        // 사용
+        document.write("객체타입 : " + typeof m1 + "<br>");
+        document.write("이름 : " + m1.name + "<br>나이 : " + m1.age + "<br>회원번호 : " + m1.no + "<br><hr>");
+
+        document.write("<br><hr>");
+        
+
+
+
+
+
+        // 객체 생성자 함수 - 다수의 객체 생성
+        // 객체 생성자 함수를 만들어, 이를 통해 객체를 생성
+        // 객체 생성을 할떄는 반드시 new를 사용
+        
+
+        function Member(no, name, age) {
+            this.no = no;
+            this.name = name;
+            this.age = age;
+
+
+                       
+        }
+        
+
+        // 객체 생성
+        var member1 = new Member(1,'이재용',29);
+        var member2 = new Member(2,'Steave',45);
+        var member3 = new Member(3,'홍길동',31);
+        
+        document.write(member1.no);
+
+        // 객체배열
+        var members = [
+            new Member(1,'이재용',29),
+            new Member(2,'Steave',45),
+            new Member(3,'홍길동',31)
+        ];
+
+        // 출력
+        for(var i=0; i<members.length; i++) {
+            document.write(members[i].no);
+        }
+        
+        
+        
+        
+
+
+        
+
+       
+
+    </script>
+</body>
+</html>

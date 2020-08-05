@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 활용 3</title>
+</head>
+<body>
+    <script>
+        // 객체 생성자 함수
+        // 일단 객체(클래스)는 뭐든지 다 this를 갖다 처 붙인다 (메소드도 this로 갖다처붙임)
+        
+        function Student(name, kor, eng, mat) {
+            // 프로퍼티(property)
+            this.name = name;
+            this.kor = kor;
+            this.eng = eng;
+            this.mat = mat;
+        
+
+            // 메소드
+            this.sum = function() {
+                return (this.kor + this.eng + this.mat);
+            }
+
+            // this.ave = this.sum() / 3; 프로피티
+            this.ave = function() {
+                return this.sum() / 3
+            }
+
+            this.showInfo = function() {
+                return this.name + "총점 : " + this.sum() + 
+                "평균 : " + this.ave().toFixed(2) + "<br>";
+            }
+        }
+
+        // 객체 생성
+        var s1 = new Student('이재용',100,100,98);
+        var s2 = new Student('박동식',50,40,98);
+
+
+        document.write(s1.name + "의 총점 : " + s1.sum() + "<br>");
+        document.write(s1.name + "의 평균 : " + s1.ave().toFixed(2) + "<br><hr>");
+        
+
+        // 객체 배열
+        var students = [
+            new Student('이익준',85,42,49),
+            new Student('홍길동',85,58,41),
+            new Student('이순신',85,99,1),
+            new Student('이우얼',15,62,47),
+            new Student('오이리',33,42,44)        
+        ];
+
+        
+        for(var i=0; i<students.length; i++) {
+            // document.write(students[i].name + "총점 : " + students[i].sum() +
+            // "평균 : " + students[i].ave().toFixed(2) + "<br>");
+            document.write(students[i].showInfo());
+                        
+        }
+        document.write("<hr>");
+
+        
+        
+
+    </script>
+</body>
+</html>

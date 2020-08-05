@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 매개변수(인수)</title>
+</head>
+<body>
+    <script>
+        // 함수 정의
+        function myFnc(name, area) {
+            document.write("안녕하세요" + name + " 입니다<br>");
+            document.write("사는 곳은 " + area + " 입니다.<br>");
+            document.write("<br><hr>");
+        }
+
+        // 함수 호출
+        myFnc("이재용","대구");
+        myFnc("홍길동"); // 두번째 값은 undefind 자바였으면 매개변수 안맞으므로 에러
+        myFnc("둘리","러시아",40); // 에러안남 매개변수 초과값은 안나옴
+    </script>
+</body>
+</html>

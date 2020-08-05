@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 for문</title>
+    <!-- 
+        1. table을 활용하여 1 ~ 10까지의 제곱, 세제곱, 네제곱을 출력하는 프로그램         
+     -->
+     <style>
+         table { width: 300px; border: 1px solid black; border-collapse: none;}
+         td, th{ border: 1px solid black;}
+         th { width: 25%; background: linear-gradient(purple, white, purple);}
+         td { padding-left: 5px;}
+         tr { height: 40px;}
+         col { background-color: lightgray;}
+     </style>
+</head>
+<body>
+    <script>
+        document.write("<table><col>");
+        document.write("<tr><th>n</th><th>n<sup>2</sup></th><th></th><th>n<sup>3</sup></th><th></th><th>n<sup>4</sup></th>");
+        var result;
+        for (var i=1; i<=10; i++) {
+            document.wirte("<tr>");
+            document.write("<td>"+ i + "</td>");
+            result = i;
+            for(var j=2; j<=4; j++) {
+                result = result * i;
+                document.write("<td>" + result + "</td>");
+
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>    
+</body>
+</html>

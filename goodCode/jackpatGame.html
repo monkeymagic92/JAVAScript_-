@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>잭팟 게임</title>
+    <style>
+        .container { width: 650px; margin: 30px auto;}
+        .game_input {text-align: center;}
+        .game_input ul {list-style: none; margin-right: 40px; margin-top: 30px;}
+        .game_input button {width: 100px; border-radius: 5px; background-color: black; color: white; border: none; height: 30px;}
+        .dice_dis { text-align: center;}
+        .dice_dis ul{ list-style: none; margin-right: 40px; margin-top: 30px;}
+    </style>
+    <!-- 
+        1. 배팅금액을 입력하지 않으면, 경고를 알려준다. 배팅금액을 입력해야만 게임이 시작된다.
+        2. 주사위는 각각 난수를 만들어 버튼을 누를때, 이미지와 함께 나타내도록 한다.
+        3. 같은 숫자에 따라 3개면 10배, 2개면 2배의 상금을 주도록 한다.
+        4. 배팅 결과를 주사위 이미지 아래에 출력한다.
+        5. 돈은 천단위 구분기호를 출력하도록 한다.
+        6. 배팅금액을 입력상자는 빈문자열로 리셋 되도록 한다.
+     -->
+</head>
+<body>
+    <div class="container">
+        <h1>잭팟 게임</h1>
+        <div class="info">
+            <p>주사위를 던져주세요.</p>
+            <p>같은 숫자 3개면 배팅 금액의 10배, 숫자 2개가 일치하면 배팅금액의 2배를 드립니다.</p>
+            <p>배팅금액을 입력하고, 플레이 버튼을 누르면 게임을 시작합니다.</p>
+        </div>
+        <div class="game_input">
+            <ul>
+                <li>
+                    <label for="money_input">배팅 금액</label>&nbsp;
+                    <input type="number" id="money_input" >
+                    <button onclick="rollDice()">주사위 굴리기</button>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="dice_dis">
+            <ul>
+                <li>
+                    <img src="images/dice_1.png" alt="" id="dice1">
+                    <img src="images/dice_2.png" alt="" id="dice2">
+                    <img src="images/dice_3.png" alt="" id="dice3">
+                </li>
+            </ul>
+        </div>
+        <div class="dice_dis">
+            <p id="ment"></p>
+            <p id="money"></p>
+        </div>
+    </div>
+    <script>
+        var money_input;
+        function rollDice() {
+            money_input = document.getElementById('money_input').value;
+            if (money_input == 0) {
+                alert('올바른 배팅 금액을 입력하여 주십시오.'); 
+            } else {
+                var p_cnt = 0;
+                var rn = new Array(0, 0, 0);
+                for (var i = 0; i < rn.length; i++) {
+                    rn[i] = parseInt(Math.random() * 6) + 1;
+                    document.getElementById('dice' + (i + 1)).setAttribute("src", "images/dice_" + rn[i] + ".png");
+                }
+                for (var i = 0; i < rn.length-1; i++) {
+                    for(var j = i+1; j< rn.length; j++) {
+                        if(rn[i] == rn[j]){
+                            p_cnt++;
+                         }
+                         if(p_cnt == 2){
+                             break;
+                         } 
+                    }
+                }
+                var ment, plus_money;
+                switch(p_cnt){
+                    case 1:
+                    ment = "축하드립니다!";
+                    plus_money = money_input * 2;
+                        break;
+
+                    case 2:
+                    ment = "축하드립니다!";
+                    plus_money = money_input * 10;
+                        break;
+
+                    default:
+                    ment = "안타깝습니다!";
+                    plus_money = 0;
+                            
+                }
+                document.querySelector('#ment').innerHTML = ment;
+                document.querySelector('#money').innerHTML = plus_money + " 원을 가지게됩니다.";
+            }
+
+        }
+    </script>
+</body>
+</html>

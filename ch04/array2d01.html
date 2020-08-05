@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>2차원 배열의 활용</title>
+        <!--
+            1. 학생 2차원 배열의 정보를 출력하시오.
+            2. 총점, 평균(소수점 둘째자리)를 기말고사 뒤에 출력하시오.
+            3. table로 출력하시오.
+        -->
+        <style>
+            table {
+                margin: 0 auto;
+                border: 2px solid black;
+                border-collapse: collapse;
+                width: 500px;
+                height: 100px;
+                text-align: center;
+            }
+            td {
+                border: 2px solid darkkhaki;
+            }
+            h1 {
+                text-align: center; color: royalblue;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <script>
+            var student = new Array(
+                new Array("이억준", "컴공", 88, 76),    //이름, 전공, 중간, 기말
+                new Array("양석형", "수학", 79, 83),
+                new Array("채송화", "물리", 92, 95),
+                new Array("안정원", "전자", 85, 92),
+                new Array("김준완", "기계", 97, 88),
+            ); 
+
+            var t1 = 0;
+            var t2 = 0;
+            var t3 = 0;
+            var t4 = 0;
+
+            document.write("<h1>학생 점수</h1>");
+            document.write("<table class = 'student'>");
+            document.write("<tr><td>이름</td><td>전공</td><td>중간고사</td><td>기말고사</td><td>합계</td><td>평균</td></tr>");
+            for(var i=0; i<student.length; i++) {
+                var sum = 0;
+                var avg = 0;
+                document.write("<tr>");
+                for(var z=0; z<student[i].length; z++) {
+                    document.write("<td>");
+                    document.write(student[i][z] + "<br>");
+                    sum = student[i][2] + student[i][3];
+                    avg = sum/2;
+                    document.write("</td>");
+                }
+                t1 += student[i][2]/student.length;
+                t2 += student[i][3]/student.length;
+                t3 += sum/student.length;
+                t4 += avg/5;
+
+              
+                document.write("<td>" + sum + "</td>");
+                document.write("<td>" + avg.toFixed(2) + "</td>");
+                document.write("<tr>");
+            }
+            document.write("<tr><td colspan='2'> 총 평균</td><td>"+t1.toFixed(1)+"</td><td>"+t2.toFixed(2)+"</td><td>"+t3+"</td><td>"+t4.toFixed(2)+"</td></tr>");
+            document.write("</table>");
+        </script>
+    </body>
+</html>

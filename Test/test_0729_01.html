@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기념일 계산 프로그램</title>
+    <style>
+        .container{ width: 450px; margin: 20px auto; border: 1px solid black;}
+        .day1 {text-align: center; padding: 20px; background-color: cornflowerblue;}
+        .day1 h3{ font-size:1.5em; color: navy; }
+        .day1 p{ font-weight: bold;color: blue;}
+        .day1 .accent{ font-style: italic; font-size: 1.1em; color: purple;}
+        .bar{background-color: #747474; color: #fff; font-size: 1.1em; padding-left: 44px;
+        margin:-18px auto; height:100px; line-height: 40px;}
+        .day2 {margin: 0px auto; background-color: beige;}
+        .day2 ul{list-style-type: none; height: 60px; border-bottom: 1px dashed #ccc; }
+        .day2 .item_title{float: left; width: 160px; font-size: 1.5em; font-weight: bold; line-height: 40px;}
+        .day2 .item_date{color: #222; font-size: 1.2em;text-align: right; margin-right:20px;
+        line-height: 40px;}
+        .day2 ul:last-child{border: none; margin-bottom: 0;}
+        .day2 ul:first-child{padding-top: 15px;}
+        .bar input{width: 40px;}
+
+    </style>
+    <!-- 
+        1. 기념일(결혼, 회사입사일, 데이트 ...)로 부터 몇 일이 지났는지를 계산하는 프로그램
+        //개선 사항
+        1.현재 프로그램은 코드에 날짜를 입력하여 사용하므로
+        이것을 브라우저로부터 날짜를 입력하여 사용한다면 좀더 대화형으로 작업할수있는 프로그램이 된다
+        2.추가할 내용
+        기념일 입력(label) , 실제 날짜(input), 날짜 계산(button)
+        3.위치
+        기념일계산 p태그 밑에 생성
+     -->
+</head>
+<body>
+    <div class="container">
+        <div class="day1">
+            <h3>기념일 계산 프로그램</h3>
+            <p>기념일로부터 오늘까지 <span class="accent" id="passDay"></span> 일 지났습니다</p>
+        </div>
+        <div class="bar">
+            <p>기념일 계산</p>
+            <label for="d1">기념일 입력 </label>
+            <input type="text" id="d1">년
+            <label for="d2"></label>
+            <input type="text" id="d2">월
+            <label for="d3"></label>
+            <input type="text" id="d3">일
+            <button onclick="calc()">날짜 계산</button>
+        </div>
+        <div class="day2">
+            <ul>
+                <li class="item_title">100일</li>
+                <li class="item_date" id="date100"></li>
+            </ul>
+            <ul>
+                <li class="item_title">200일</li>
+                <li class="item_date" id="date200"></li>
+            </ul>
+            <ul>
+                <li class="item_title">1주년</li>
+                <li class="item_date" id="date365"></li>
+            </ul>
+            <ul>
+                <li class="item_title">500일</li>
+                <li class="item_date" id="date500"></li>
+            </ul>
+            <ul>
+                <li class="item_title">2년</li>
+                <li class="item_date" id="date730"></li>
+            </ul>
+            <ul>
+                <li class="item_title">1000일</li>
+                <li class="item_date" id="date1000"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function calc() {
+            var now = new Date();
+            var d1 = document.querySelector("#d1").value;
+            var d2 = document.querySelector("#d2").value;
+            var d3 = document.querySelector("#d3").value;
+            var dDay = new Date(d1+"-"+d2+"-"+d3);
+
+            var start = dDay.getTime();
+            var end = now.getTime();
+            var pass = end - start;
+            var passDay = Math.floor(pass/1000/60/60/24);
+  
+            document.querySelector("#passDay").innerHTML = passDay;
+
+            calcDay(100);
+            calcDay(200);
+            calcDay(365);
+            calcDay(500);
+            calcDay(730);
+            calcDay(1000);
+
+        function calcDay(days){
+            var day2 = (days*24*60*60*1000);
+            var passDay2 = start + day2;
+            var someDate = new Date(passDay2);
+            var year = someDate.getFullYear();
+            var month = someDate.getMonth()+1;
+            var day = someDate.getDate(); 
+
+            if(month < 10){
+                month = "0".concat(month);
+            }
+            if(day < 10){
+                day = "0".concat(day);
+            }
+            document.querySelector("#date"+days).innerHTML = year +"년"+ month+"월" + day+"일";
+        }
+    }
+
+
+
+
+
+
+
+        // var now = new Date(); // 현재 날짜와 시간
+        // var firstDate = new Date("2019-12-25"); //설정 날짜, 2019년 12월 25일 설정
+        // // console.log(fitstDate).toLocaleString();
+        // // console.log(now).toLocaleString();
+
+        // var start = firstDate.getTime(); // 기념일의 밀리세컨드를 구함, 1/1000초
+        // var end = now.getTime(); //오늘의 밀리세컨드
+        // var pass = end - start; //오늘 - 기념일 = 경과시간의 밀리세컨드
+        // var passDay = Math.floor(pass/1000/60/60/24);
+
+        // document.querySelector("#passDay").innerHTML = passDay;
+        // calcDay(100);
+        // calcDay(200);
+        // calcDay(365);
+        // calcDay(500);
+        // calcDay(730);
+        // calcDay(1000);
+        // function calcDay(days){
+        //     //전달받은 일을 밀리세컨드로 바꿔야함 anni(일)을 anni(밀리세컨드)로 변경
+        //     var days2 = (days*24*60*60*1000); //일을 밀리세컨드로 변경
+        //     var passDay2 = start + days2; //기념일에서 경과일을 더한 밀리세컨드
+            
+        //     // 밀리세컨드를 Date객체로 다시 만들어주어야 한다.
+        //     var someDate = new Date(passDay2);
+        //     //년 월일 구함
+        //     var year = someDate.getFullYear();
+        //     var month = someDate.getMonth()+1; //우리나라는 +1해야함
+        //     var day = someDate.getDate();
+        //     console.log(year +"년"+ month+"월" + day+"일");
+        //     //월을 2자리로 만듬
+        //     if(month < 10){
+        //         month = "0".concat(month);
+        //     }
+        //     if(day < 10){
+        //         day = "0".concat(day);
+        //     }
+        //     document.querySelector("#date"+days).innerHTML = year +"년"+ month+"월" + day+"일";
+        // }
+
+        // 경과 시간에대한 확인
+        // console.log(pass + " ms"); //경과시간의 밀리세컨드
+        // console.log(pass/1000 + " s"); //초
+        // console.log(pass/1000/60 + " min"); //분
+        // console.log(pass/1000/60/60 + " hour"); //시간
+        // console.log(pass/1000/60/60/24 + " day"); //일
+        // console.log(parseInt(pass/1000/60/60/24) + " day"); //소수점이하 버리기 정수형으로 변환해서 버리기
+        // console.log(Math.floor(pass/1000/60/60/24) + " day"); //Math로 버리기
+
+        
+
+    </script>
+</body>
+</html>

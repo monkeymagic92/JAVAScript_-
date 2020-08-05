@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0721 6번</title>
+</head>
+<body>
+    <!-- 
+        1. 입력창으로부터 정수를 입력받아서 정수의 약수를 출력하고, 약수의 갯수, 약수의 합
+        입력 : 정수 입력 : 10
+        출력 : 
+        약수 : 1 2 5 10
+        약수의 갯수 : 4개
+        약수의 합 : 18
+     -->
+    <script>
+        var n = prompt("정수 입력");
+        var count = 0, sum = 0;
+
+        document.write(n + "의 약수 : ");
+        for(var i=1; i<=n; i++){
+            if(n % i == 0) {  // 약수 구할때 공식
+                document.write(i + " ");
+                ++count;
+                sum += i;
+            }
+        }
+
+        document.write("<br>" + n + "의 약수의 개수 : " + count + "<br>");
+        document.write(n + "의 약수의 합 : " + sum);
+        
+        
+       
+
+       
+         
+
+         
+    </script>
+</body>
+</html>

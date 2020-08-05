@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 삭제와 대체</title>
+    <style>
+        .container { width: 600px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>웹브라우저</h3>
+        <div id="b1">
+            <img src="images/wb1.png" alt="">
+            <img src="images/wb2.png" alt="" id="netscape">
+            <img src="images/wb3.png" alt="">
+            <img src="images/wb4.png" alt="" id="safari">
+            <img src="images/wb5.png" alt="">
+            <img src="images/wb6.png" alt="">
+        </div>
+        <hr>
+        <button id="btn1">넷스케이프 삭제</button>&nbsp;&nbsp;
+        <button id="btn2">사파리 대체</button>
+    </div>
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+        btn1.addEventListener("click", deleteNetscape);
+        btn2.addEventListener("click", replaceSafari);
+
+
+        // 사진 삭제
+        function deleteNetscape() {
+            var netscape = document.getElementById("netscape");
+            netscape.parentNode.removeChild(netscape);
+            alert("삭제됬습니다");
+        }
+
+
+        // 사진 변경
+        function replaceSafari() {
+            var safari = document.getElementById("safari");
+
+            var newTag = document.createElement("img");
+            newTag.setAttribute("src", "images/wb10.png");
+            newTag.setAttribute("width", "55px");
+            newTag.setAttribute("height", "55px");
+            safari.parentNode.replaceChild(newTag, safari);
+            alert("사파리 사진이 변경되었습니다");
+        }
+
+
+    </script>
+   
+</body>
+</html>

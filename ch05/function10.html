@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 사용</title>
+</head>
+<body>
+    <script>
+        // DB에 저장된 아이디와 비밀번호를 확인하여 맞으면 로그인 되는 기능 
+        // 가정하고 해보자란것 ( 내가 예상했던 바 그대로 흘러가는구만)
+        var rightId = "korea";
+        var rightPw = "1234";
+
+        function login(id, pw) {
+            if (id == rightId) {
+                if(pw == rightPw) {
+                    document.write(id + "님 방문을 환영합니다");
+                } else {
+                    alert("비밀번호가 틀렸습니다");
+                }
+            } else {
+                alert("존재하지 않는 아이디입니다.");
+            }
+        }
+
+        var userId  = prompt("아이디 입력");
+        var userPw = prompt("비밀번호 입력");
+        login(userId,userPw);
+
+    </script>
+</body>
+</html>

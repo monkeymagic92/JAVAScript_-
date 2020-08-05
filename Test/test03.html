@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3번</title>
+    <style>
+        mark { background-color : blue;}
+    </style>
+</head>
+<body>
+    
+    <!-- 
+        1. 확인창으로부터 메세지를 전달받아 전등의 점등(on)/소등(off)을 결정여부를 변수에 저장
+        - 메세지 : '전등을 점등하겠습니까?'
+
+        2. 그 값으로부터 전등의 점등/소등 여부를 브라우저화면에 메세지와 함께 이미지를 출력. 
+     -->
+
+     <script>
+         var light = confirm("전등을 점등하겠습니까 ?");
+         if(light == true){
+            document.write("<h2><mark>점등<mark></h2>");
+            document.write('<img src="C:/JavaSpring/JavaScripts/js/Test/images/lighton.png">');
+        } else {
+            document.write("소등");
+            document.write('<img src="images/lightoff.png" alt="">');
+        }
+     </script>
+     
+     
+     
+     
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 함수</title>
+</head>
+
+<body>
+    <h3>입력 함수</h3>
+    <p>
+        1. prompt() : 대화상자를 통해서 사용자에게 문자열을 입력하도록 하는 함수
+        자바 Scanner 같은 느낌<br>
+        2. alert() : 경고메세지, 안내메세지 등을 나타내는 대화상자를 출력하고, 확인버튼을 누르면 종료<br> 
+        alert()는 JSP에서도 많이 사용함<br>
+        <br>
+        3.confirm() : 대화상자를 통해서 사용자에게 확인 또는 취소의 응답을 요구하는
+        메세지를 제공하고, 응답을 받아 반환(return)한다.<br>
+        - 응답 : true, false 로 응답함<br><br>
+        
+    </p>
+    
+
+    <script>
+        // int age = scan.nextInt();
+        // String name = scan.nextLine(); 같은??? 뉘앙스로 느낌가지면 됨
+        var age = prompt("당신의 나이를 입력하시오","(기본값)default");
+        if(age < 20){
+            document.write("당신의 미성년자 입니다.<br>");
+            alert("미성년자에게는 주류를 판매할수 없습니다");
+        } else {
+            document.write("당신은 성인입니다<br>");
+        }
+        
+
+        var answer = confirm("전원을 켜겠습니까?");
+        if(answer == true){
+            document.write("전원 on<br>");
+        } else {
+            document.write("전원 off<br>");
+        }
+    </script>
+
+</body>
+</html>

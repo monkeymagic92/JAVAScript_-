@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체</title>
+</head>
+<body>
+    <script>
+        // 날짜를 직접 설정하는 방법
+        // 2002년 5월 31일로 날짜를 설정
+
+        
+        // 1. 방법 (년, 월, 일을 설정해서 사용)
+        var date1 = new Date(2002, 4, 31);  // 0 ~ 11, 인덱스(4) - 5월 (인덱스값 기준)
+        var year = date1.getFullYear(); // 년도
+        var month = date1.getMonth(); // 월
+        var day = date1.getDay(); // 요일
+
+        // 그냥찍어보기
+        document.write(date1 + "<br>");
+
+        // 월을 사용할때 +1로 수정해서 사용
+        document.write(year + "년" + (month+1) + "월" + day + "일");
+
+
+        // 2. 방법
+        var date2 = new Date(2020, 11, 31); // 2020년 12월 31일 (월부분 인덱스 + 1)
+        var year2 = date2.getFullYear();    
+        var month2 = date2.getMonth();
+        var day2 = date2.getDay();
+
+        var hour2 = date2.getHours();
+        var minute2 = date2.getMinutes();
+        var second2 = date2.getSeconds();
+
+        document.write(date2 + "<br>");
+        document.write(year2 + "년" + (month2+1) + "월" + day2 + "일<br>");
+        
+        var today = new Date();
+        var nowMonth = today.getMonth();
+        var nowYear = today.getFullYear();
+
+        document.write("현재 년,월 : " + nowYear + "년" + (nowMonth + 1) + "월" + today.getDate()+"<br>");
+
+       
+    </script>
+</body>
+</html>

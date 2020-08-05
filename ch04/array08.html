@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양한 배열 메소드 활용3</title>
+</head>
+<body>
+    <script>
+        var arr1 = ["사당", "교대", "방배", "강남"];
+        
+        // 확인
+        document.write(arr1 + "<br><hr>");
+
+
+        // sort() : 배열의 값을 오름차순으로 정렬하는 메소드
+        arr1.sort(); // 오름차순
+        document.write(arr1 + "<br><hr>");
+
+        arr1.reverse(); // 내림차순 (원래 값을 뒤에서부터 바꾸니까 sort 반대 reverse 되는것임 이해하기쉬움)
+        document.write(arr1 + "<br><hr>");
+
+
+        // indexOf() : 주어진 값과 일치하는 값의 인덱스를 알려줌
+        var idx = arr1.indexOf("교대");
+        document.write("교대의 인덱스 값 : " + idx + "<br><hr>");
+
+    </script>
+</body>
+</html>

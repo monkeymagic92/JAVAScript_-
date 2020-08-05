@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 활용 7</title>
+    <!-- 
+        기본 함수와 익명 함수의 차이점
+
+        호이스팅(hoisting) : 함수 호출을 함수 정의보다 먼저해도 된다는 뜻
+        즉, 원래는 함수를 위에 정의해야 밑에서 호출할수 있지만
+        호이스팅 이란 것은 함수를 밑에 정의하고 위에 호출할수 있다는 것
+
+        - 기본함수 : 호이스팅을 지원
+        - 익명함수 : 호이스팅 지원 X
+     -->
+</head>
+<body>
+    <script>
+        // 1. 기본 함수
+        // 함수 호출
+        // 함수 호출을 함수 정의보다 먼저(위에) 적을수 있다.
+        // 기본 함수는 호이스팅(hoisting)을 지원하기 때문..
+        f1(); 
+
+        // 1. 함수 정의
+        function f1() {
+            document.write("기본 함수 호출 ! <br>");
+        }
+
+
+        // 2. 익명 함수 
+        // 호이스팅을 지원하지않음 왜냐 ? 익명함수는 변수에 담아서 변수 밑에부터 사용가능
+        
+        // 2-1 위에서 함수 호출
+        f2();
+
+        // 2. 함수정의
+        var f2 = function() {
+            document.write("익명 함수 호출!<br>");
+        }
+
+        // 2-1 밑에서 함수 호출
+        f2();
+        
+        
+    </script>
+</body>
+</html>

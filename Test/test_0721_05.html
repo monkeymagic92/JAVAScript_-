@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0721 5번</title>
+</head>
+<body>
+    <!-- 
+        1. 입력창으로 부터 정수를 입력받아서 입력받은 수의 팩토리얼을 출력
+        입력 : 정수 입력 : 5
+        출력 : 5! = 5 * 4 * 3 * 2 * 1 = 120, 브라우저로 출력
+     -->
+     <script>
+         var n = prompt("정수 입력");
+         document.write(n + "! = ");
+         var fact = 1;
+         for(var i=n; i>= 1; i--) {
+
+            // 좋은 예시 ( 나중에 응용 가능 ok ??) 
+            if(i > 1){
+                document.write(i + " * ");    
+            } else {
+                document.write(i + " = ");
+            }
+            
+            fact *= i;
+         }
+         document.write(fact);
+
+         
+         
+     </script>
+</body>
+</html>

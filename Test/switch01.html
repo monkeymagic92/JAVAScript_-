@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch문 연습</title>
+</head>
+<body>
+    <script>
+        var menu = Number(prompt("메뉴를 선택하세요.(1-4)","0"));
+
+        //1. if문으로 작성
+
+        // if(menu == 1){
+        //     document.write("1번 파일열기");
+        // } else if(menu == 2){
+        //     document.write("2번 파일저장");
+        // } else if(menu == 3){
+        //     document.write("3번 파일쓰기");
+        // } else if (menu == 4) {
+        //     document.write("4번 파일닫기")
+        // } else {
+        //     document.write("잘못 선택했습니다");
+        // }
+
+
+        // switch 문으로 작성
+        // switch(조건) - 조건 : 정수, 문자열 O    /    실수 X
+        // 조건에 따라 case문 선택함
+        // :(콜론) : 레이블(label) 의미
+        // case : ~ 경우에
+
+        // if문, switch~case문 
+        // 1. switch문으로 만들수 있는 것은 모두 if문으로 '만들수 있다'
+        // 2. if문으로 만들수 있는 것은 switch문으로 '만들수 없다'. (switch문에 속성은 제약이 있기 때문)
+        // 3. switch문 = 정수, 문자열로 가지수가 몇 가지로 딱 떨어지는 경우에 사용하면
+        //               if문 보다 훨씬 더 간결하고 명확한 프로그래밍을 할수있다.
+
+        switch(menu){
+            case 1:
+                document.write("1번 메뉴 열기");
+                break;
+            case 2:
+                document.write("2번 메뉴 읽기");
+                break;
+            case 3:
+                document.write("3번 메뉴 쓰기");
+                break;
+            case 4:
+                document.write("4번 메뉴 닫기");
+                break;
+            default:
+                document.write("잘못입력하셨습니다.<br>다시 입력하세요");
+        }   
+        
+    </script>
+</body>
+</html>

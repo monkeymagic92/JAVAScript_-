@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체</title>
+</head>
+<body>
+    <script>
+        // 문자열 객체 사용
+        var s1 = "Hello Javascript World! Javascript";
+
+        // 8. substr(a,b) : a번째 인덱스부터 b개의 문자열 출력
+        var s2 = s1.substr(17,6);
+        document.write(s2 + "<br><hr>");
+
+
+        // 9. split() : 문자열에 특정문자(구분자)를 기준으로 나누어 배열로 저장
+        var animals = "lion/tiger/bear/eagle/elephant/hippo/blackyak";
+        var arr = animals.split("/");   // 슬래쉬 기준으로 자르겠단 뜻  즉, 0번 = lion, 1번 = tiger, 2번 = bear.....
+
+        // 9-1 출력1
+        document.write(arr + "<br><hr>");
+        
+        // 9-2 출력2
+        for(var i=0; i<arr.length; i++) {
+            document.write(arr[i]);
+        }
+        document.write("<br><hr>");
+        
+        // 9-3 출력3
+        for(var i in arr) {
+            document.write(arr[i]);
+        }
+        document.write("<br><hr>");
+
+
+
+        // 10. toLowerCase() : 모든 문자를 '소문자'로 변경
+        var s3 = s1.toLowerCase();
+        document.write(s3 + "<br><hr>");
+
+
+        // 11. toUpperCase() : 모든 문자를 '대문자'로 변경
+        s3 = s1.toUpperCase();
+        document.write(s3 + "<br><hr>");
+
+
+
+        // 12. length; 문자열 길이 혹은 배열의 총 길이를 나타내는 속성
+        document.write(s1.length + "<br><hr>");
+
+
+        // 13. concat() : 문자열을 연결하는 메소드   (DB concat() 이랑 비슷)
+        var s5 = "자바스크립트";
+        var s6 = s1.concat(s5);
+        document.write(s6 + "<br><hr>");
+
+
+        // 14. charCodeAt() : 문자에 해당하는 아스키(ASCII) 코드값을 반환
+        var s7 = "ABCDEabcd";
+        var n1 = s7.charCodeAt(0); // s7에 첫번째 대문자 A의 아스키코드값을 반환
+        document.write(n1 + "<br><hr>");
+
+
+
+        // 15. fromCharCode() : 아스키 코드에 해당하는 문자를 반환
+        var n3 = String.fromCharCode(65);
+        document.write(n3 + "<br><hr>");
+
+        
+        // 17. trim() : 문자열 앞두의 공백을 제거 ( DB trim() 이랑 비슷) (지금은 브라우저 화면에 나타내다보니까 원래 한개의 공백만 허용하기에 의미가안보임)
+        // 즉, 입력창이나 그런곳에서 사용시 효능을 발휘할듯...
+        var s8 = "     hello       javascript      ";
+        var s9 = s8.trim();
+        document.write(s9 + "*<br><hr>");
+        
+
+        
+
+
+
+
+        
+    </script>
+</body>
+</html>

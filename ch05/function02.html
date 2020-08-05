@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 활용 2</title>
+    <!-- 
+        1. 변수의 종류
+
+        1. 전역 변수(global variable) : 함수 밖에서 선언되어 사용하는 변수
+
+        - 웹브라우저에서 해당 웹 페이지를 사용하는 동안 계속 유지되고,
+         모든 자바스크립트에서 참조할 수 있음.
+        
+         2. 지역 변수(local variable) : 함수 안에서 선언되어 사용하는 변수
+
+        - 해당 함수가 실행되는 동안만 유지되고, 해당 함수 안의 코드들에서만 참조할 수 있다.
+
+
+        2. 미리 정의하지않고 특정 함수 내에서 변수를 사용하게 되면, 자바스크립트에서는 
+        이 변수를 지역변수로 취급한다.
+
+     -->
+</head>
+<body>
+    <script>
+        var a = "global_A"; // 전역 변수
+        var b = "global_B";
+        var c = "global_C";
+        
+        // 함수 정의
+        function f1() {
+            var b = "local_B"; // 지역 변수
+            var d = "local_D";
+
+            document.write(" --- 함수 안에서 사용 ---<br><hr>");
+            document.write("함수 안에서 a 사용하기" + a + "<br><hr>");
+            document.write("함수 안에서 b 사용하기" + b + "<br><hr>");
+            document.write("this.b = " + this.b + "<br><hr>"); // 자바 this.b는 내전역변수 사용(멤버필드 똑같음) 
+            
+        }
+
+        f1(); // 함수 호출
+        document.write(" --- 함수 밖에서 사용 --- <br><hr>");
+        document.write("전역변수 a의 값 : " + a + "<br><hr>");
+        document.write("전역변수 b의 값 : " + b + "<br><hr>");
+        // document.write("전역변수 b의 값 : " + b + "<br><hr>"); f1()의 지역변수에 선언되어있는 d의 변수는 전역변수에서 접근할수 없다.
+        // 단 지역변수는 전역변수에 접근가능( { {} }  전역 안에 지역이 포함되어 있으니 당연한것^^?)
+        // 같은이름의 전역변수와 지역변수가 있을 때 우선적으로 지역변수 ( 자바에서 배운것, 같은이름이면 가까이있는것을 사용한다)
+        // 
+
+
+
+        
+
+        
+
+
+        
+
+        
+
+
+
+    </script>
+</body>
+</html>

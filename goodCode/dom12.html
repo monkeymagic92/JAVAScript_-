@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 효과 (타이머 함수)</title>
+    <style>
+        .container { width: 500px; margin: 0 auto;}
+        #progBar { height: 30px; position: relative; background-color: darkgray;}
+        #bar { background-color: green; width: 0; height: 30px; position: absolute;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>진행 상태 표시</h3>
+        진행상태 : <span id="prog1">0%</span><hr>
+        <div id="progBar">
+            <div id="bar"></div>
+        </div>
+        <hr>
+        <button id="btn1">실행</button>
+    </div>
+
+    <script>
+        var prog1 = document.getElementById("prog1"); // 위 아이디로 prog1으로 받은 아이디를 prog1 변수에 담겠다 ( 자바스크립에서 사용하기 위한 아이디변수 )
+        var bar = document.getElementById("bar");
+
+        var btn1 = document.getElementById("btn1");
+        btn1.addEventListener("click", move);    //     위에 btn1아이디를 받아와서 btn1 버튼을 클릭했을시 move메소드가 실행
+        function move() {
+
+            var width = 0;
+            var start = setInterval(function() {
+                if (width == 100) clearInterval(start);
+                else {
+                    width++;
+                    bar.style.width = width + "%";
+                    prog1.innerHTML = width + "%";
+                }
+            
+            }, 500);
+        }
+    </script>
+</body>
+</html>

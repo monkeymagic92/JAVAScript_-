@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체</title>
+</head>
+<body>
+    <script>
+        // 문제이씅ㅁ ********* 사용안됨 오류 
+        // 날짜객체 만드는 1번째 방법
+        var date1 = new Date(); 
+        var year = date1.getFullYear(); // 연도
+        var month = date1.getMonth(); // 월(0~11), 7월 : 6 (인덱스 기준)
+        var day = date1.getDay();  // 일
+        
+        var hour = date1.getHour(); // 시간
+        var minute = date1.getMinute(); // 분
+        var second = date1.getSeconds(); // 초
+        var milliSecond = date1.getMilliSeconds(); // 0.00~초 1000분의 1초
+
+        var weekStr = date1.getDay(); // 요일 정보, 0~6, 0:일, 1:월, 2:화 ... 6:토
+
+        document.write(date1 + "<br>"); // 현재 시스템의 날짜 정보 확인, 외국 날짜 형식
+        document.write(year + "년" +  (month+1) + "월" + day + "일<br>");
+        document.write(hour + "시" + minute + "분" + second + "초(" + milliSecond + ")<br>" );
+        
+
+
+
+    </script>
+</body>
+</html>

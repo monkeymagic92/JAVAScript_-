@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0720 2번</title>
+    <!--  
+        1. 입력창으로부터 가위/바위/보 중에 하나를 입력받아서 브라우저 화면에 해당 이미지를 출력
+           하는 프로그램
+           기본값 : 가위
+
+        결과 : 가위를 입력하셨습니다 . 
+                ( 이미지 )
+    -->
+
+</head>
+<body>
+    <script>
+        var str = prompt("가위 / 바위 / 보 를 입력하세요","가위");
+        if(str == "가위"){ // 참고로 자바 같은경우 문자열비교는 equals 로 해줘야됨(왜냐 ? String은 레퍼런스 변수니까)
+            document.write("<h2>가위를 입력하셨습니다</h2>");
+            document.write('<img src="C:/JavaSpring/JavaScripts/js/Test/images/math_img_1.jpg">');
+        } else if (str == "바위"){
+            document.write("<h2>바위를 입력하셨습니다</h2>");
+            document.write('<img src="C:/JavaSpring/JavaScripts/js/Test/images/math_img_2.jpg">');
+        } else if (str == "보"){
+           document.write("<h2>보를 입력하셨습니다</h2>");
+           document.write('<img src="images/math_img_3.jpg">');
+        } else {
+            document.write("<h2>잘못 입력 , 가위/ 바위/ 보만 입력</h2>")
+        }
+    </script>
+    
+</body>
+</html>

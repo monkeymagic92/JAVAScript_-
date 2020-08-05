@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>특정 노드의 직전 형제 노드 추가</title>
+    <style>
+        .container { width: 500px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        추천 여행지 : <input type="text" id="t1">
+        <button id="btn1">국내</button>&nbsp;&nbsp;<button id="btn2">국외</button>
+        <div id="d1">
+            <div>1. 국내 여행지</div>
+            <div id="d2">2. 국외 여행지</div>
+        </div>
+    </div>
+
+    <script>
+        var t1 = document.getElementById("t1");
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+
+        btn1.addEventListener("click",addLobal);
+        btn2.addEventListener("click",addGlobal);
+
+        function addLobal() {
+            var newTag = document.createElement("div"); // 태그생성
+            var txtNode = document.createTextNode(t1.value); // 태그 안에 넣을 텍스트 생성
+            newTag.appendChild(txtNode);
+
+            // d1 : 부모, newTag, d2
+            d1.insertBefore(newTag, d2); // d1 안에서 d2이전에 newTag를 삽입
+            t1.value = "";
+            t1.focus();
+        }
+
+        function addGlobal() {
+            var newTag = document.createElement("div"); // 태그생성
+            var txtNode = document.createTextNode(t1.value); // 태그 안에 넣을 텍스트 생성
+            newTag.appendChild(txtNode);
+
+            
+            d1.appendChild(newTag); 
+            t1.value = "";
+            t1.focus();
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체 - 유효성 검사</title>
+</head>
+<body>
+    <script>
+            var userEmail = prompt("당신의 이메일 주소는 ?","");
+
+            // 도메인
+            // .or.kr : 비영리 단체
+            // .go.kr : 공공기관
+            // .ac.kr : 대학교
+            var arrUrl = ['.co.kr','.com','.net','.or.kr','.go.kr','.ac.kr'];
+            
+            var check1 = false;
+            var check2 = false;
+
+            // 이메일 유효성 검사 1
+            if(userEmail.indexOf("@") > 0) {
+                check1 = true;
+            }
+
+            // 이메일 유효성 검사 2
+            for(var i=0; i<arrUrl.length; i++) {
+                if(userEmail.indexOf(arrUrl[i]) > 0) {
+                    check2 = true;
+                }
+            }
+
+
+            // 확인하는 방법
+            if(check1 && check2) {
+                document.write(userEmail + "<br><hr>");
+            } else {
+                alert("이메일의 형식이 잘못 되었습니다");
+            }
+
+
+
+    </script>
+</body>
+</html>

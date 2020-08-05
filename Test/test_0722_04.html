@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중첩 for문</title>
+    
+    <!-- 
+        1. 구구단 2단부터 9단까지 한번에 브라우저 출력 
+     -->
+    <style>
+        .container { width: 1000px; margin: 20px auto;}
+        #c {color:coral; text-align: center; margin-bottom: -20px;}
+        #a {color: black;}
+        h1 { text-align: center; margin-bottom: 30px;}
+        h2 { text-align: center; color:cornflowerblue;}
+        mark { background-color: bisque;}
+        .dan { 
+            width: 100px;
+            display: inline-block;  
+            padding: 4px;
+            margin: 5px;
+            line-height: 30px;
+            border: 1px solid black;
+            font-size: 1.1em;
+        }
+        .dz { text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><mark>☆구구단☆</mark></h1>
+        <script>            
+            for(var i=2; i<=9; i++) {
+                document.write("<div class=dan>");
+                document.write("<h2><mark>" + i + "단" + "</mark></h2>");
+                for(var j=1; j<=9; j++) {
+                    
+                    document.write("<div id=c>" + i + " × " + j + " = " + i*j + "</div><br>");
+                    
+                }
+                document.write("<div class=dz>" + i + "단</div>");
+                document.write("<br>");
+                document.write("</div>");
+            }    
+
+        </script>
+    </div>
+</body>
+</html>

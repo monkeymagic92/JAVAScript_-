@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>continue</title>
+    <style>
+        
+        h2 { color : red;}
+    </style>
+    <!-- 
+        1. 입력창으로 부터 정수를 입력받아서 1부터 입력받은 수까지를 1씩 증가하여 출력하되,
+        7의 배수만 제외하고 출력하시오 
+        입력 : 정수 입력
+        출력 : 1 2 3 4 5 6 ! 8 9 10 11 12 13 ! 15
+     -->
+</head>
+<body>
+    <script>
+        var num = prompt("정수 입력"); // 값 한개의 변수에 따로 더하고 뭐 그런거 없으니 Number 안넣었음
+
+        for(var i=1; i<=num; i++) {
+            if(i % 7 == 0) {
+                document.write("<h2> !! </h2>");
+                continue;
+            }
+            document.write(i + " ");
+        }
+    </script>
+    
+</body>
+</html>

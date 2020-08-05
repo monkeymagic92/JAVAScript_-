@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>밀라의 서제</title>
+    <!--
+         
+         레미제라블       확인       삭제
+         노인과 바다
+         전쟁과 평화    
+    -->
+    <style>
+        .container { width: 500px; margin: 30px auto; text-align:center;}
+        table { width: 300px; border: 1px solid black; border-collapse: collapse; 
+       	margin-top: 30px;}
+        td { border: 1px solid black; text-align:center;}
+        tr { height: 60px;}
+        #f { text-align: center; color: red;}
+
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="3">책 서제 이름</td>              
+            </tr>
+            <tr>
+                <td id="a"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <script>
+        function Book(title, author, volume, price) {
+            this.title = title;
+            this.author = author;
+            this.volume = volume;
+            this.price = price;
+        }
+
+        Book.prototype.check = function() {
+            document.write("책이름 : " + this.title)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0720 1번 </title>
+    <!-- 
+        1. 입력창으로 부터 점수를 입력받아 홀수, 짝수 여부를 판별하는 프로그램
+        메세지 : 점수를 입력해주세요 
+        ex) 결과화면에서 입력하는 값에 따라 
+            5 -> 5는 홀수입니다 ,   10 -> 짝수입니다
+    -->
+</head>
+    <script>
+        // 함수로 만든다면..
+        function a(n1){
+            if(n1 % 2 == 0){
+                document.write("(" + n1 +")" + "짝수입니다");
+            } else {
+                document.write(n1 + "홀수입니다");
+            }
+        }
+
+    </script>
+<body>
+    <script>
+        
+        var n1 = Number(prompt("숫자 입력"));    // Number 로 하면 문자열안에 숫자로 바꿈(Integer.parseInt() 와 같음 (대신 문자열이 더껴있으면 안됨))
+        a(n1);
+        
+
+
+
+        // var num = prompt("숫자 입력","0");
+        // if(num % 2 == 0){
+        //     document.write(num + " 은(는) 짝수입니다");
+        // } else {
+        //     document.write(num + " 은(는) 홀수입니다");
+        // }
+
+    </script>
+</body>
+</html>

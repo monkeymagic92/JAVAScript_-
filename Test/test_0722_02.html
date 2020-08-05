@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 테이블 방법 */
+
+        /* .container { width: 800px; margin: 30px auto;}
+        table { width: 300px; border: 1px solid black; border-collapse: collapse;}
+        td { border: 1px solid black; text-align:center;}
+        tr { height: 60px;}
+        caption {font-size: 1.5em;}
+        p { font-size: 1em;} */
+
+
+
+        /* div 스타일방법  */
+        
+        .container { width: 800px; margin: 30px auto;}
+        p { font-size: 1em;}
+        .content { width: 100%; }
+        .sub { width: 150px; height: 200px; padding: 10px; margin: 10px;
+                border: 1px solid black; float: left;}
+    </style>
+</head>
+<body>
+    <!--  ************ 아주 좋은 예시 *******************
+
+        1. 12개의 탄생석 이미지를 4행3열의 테이블에 출력하시오.
+        - 이미지 밑에 월/탄생석/상징 을 나타내는 문자열을 출력하시오.
+
+        2. table을 사용하지 않고, div로 묶어 출력하시오.
+     -->
+
+     <script>
+         var count = 1;
+         var count1 = 0;
+
+         var dcount = 1;
+
+         var stones = ["1월 / 가넷 / 사랑,진실","2월 / 자수정 / 평화,성실"
+         ,"3월 / 아쿠아마린 / 총명,용감","4월 / 다이아몬드 / 영원한사랑",
+         "5월 / 에메랄드 / 행복,행운","6월 / 진주 / 건강,부귀"
+         ,"7월 / 루비 / 영원한생명,열정,용기","8월 / 감람석 / 지혜,부부의행복",
+         "9월 / 사파이어 / 지혜,불변","10월 / 오팔 / 희망,순결","11월 / 토파즈 / 우정,인내"
+         ,"12월 / 터키석 / 성공,승리"];
+
+        
+
+        document.write("<table><caption>월별탄생석</caption>");
+         
+        // for(var i=1; i<=3; i++) {
+        //     document.write("<tr>");
+        //     for(var j=1; j<=4; j++) {
+        //        document.write("<td>");
+        //        document.write('<img src="images/stone0'+ (count++) +'.png">');
+        //        document.write("<p>" + stones[count1++] + "</p></td>");                    
+               
+        //     }
+        //     document.write("</tr>");
+        // }
+        // document.write("</table>");
+
+        
+        // 2번 방법 - div로 묶는 방법
+        document.write("<div class='content'>");
+        for(var i=1; i<=3; i++) {
+            
+            for(var j=1; j<=4; j++) {
+               document.write("<div class='sub'>");
+              
+               document.write('<img src="images/stone0'+ (count++) +'.png">');
+               document.write("<p>" + stones[count1++] + "</p></td>");
+               document.write("</div>");                 
+            }            
+        }
+        document.write("</div>");
+      
+
+
+
+
+
+    </script>
+    
+     
+</body>
+</html>

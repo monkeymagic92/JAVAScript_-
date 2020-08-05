@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위바위보 게임</title>
+    <style>
+        h2 {color: red; text-align: center;}
+        .a { text-align: center;}
+    </style>
+</head>
+<body>
+    <script>
+        // 1. 가위     2. 바위    3. 보
+        var com = parseInt((Math.random() * 3 + 1));
+        var user = prompt("1. 가위 / 2. 바위 / 3. 보");
+                
+        if (com == 1) {
+            if (user == 1) {
+                document.write("<h2>비겼습니다</h2>");
+            } else if (user == 2) {
+                document.write("<h2>이겼습니다</h2>");
+            } else if (user = 3) {
+                document.write("<h2>졌습니다</h2>");
+            } else {
+                document.write("잘못입력하였습니다");
+            }
+        } else if (com == 2) {
+            if (user == 1) {
+                document.write("<h2>졌습니다</h2>");
+            } else if (user == 2) {
+                document.write("<h2>비겼습니다</h2>");
+            } else if (user == 3) {
+                document.write("<h2>이겼습니다</h2>");
+            } else {
+                document.write("잘못 입력하였습니다");
+            }
+        } else if (com == 3) {
+            if (user == 1) {
+                document.write("<h2>이겼습니다</h2>");
+            } else if (user == 2) {
+                document.write("<h2>졌습니다</h2>");
+            } else if (user == 3) {
+                document.write("<h2>비겼습니다</h2>");
+            } else {
+                documentw.write("잘못 입력하였습니다");
+            }
+        }
+
+        if (com == 1) {
+            com = "가위";
+        } else if (com == 2) {
+            com = "바위";
+        } else {
+            com = "보";
+        }
+
+        if (user == 1) {
+            user = "가위";
+        } else if (user == 2) {
+            user = "바위";
+        } else if (user == 3) {
+            user = "보";
+        }
+        
+        document.write("<div class='a'>");
+        document.write("<br><h2>컴퓨터 : </h2>" + com + "<br><h2>유저 : </h2>" + user );
+        document.write("</div>");
+        
+    </script>
+</body>
+</html>

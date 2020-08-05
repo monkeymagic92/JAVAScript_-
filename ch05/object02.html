@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 활용 2</title>
+    <!-- 
+        (2) 객체
+        - 객체 생성자 함수를 사용하여 객체를 생성한다
+        - this : 현재 코드를 실행하는 객체를 나타내는 키워드 this는 생성되는 객체 자신
+        - 객체 생성자 함수를 통해서 인스턴스를 만들때 반드시 new 키워드를 사용하여 생성해야함
+        - 
+     -->
+</head>
+<body>
+    <script>
+        // 객체 생성자 함수 (자바의 클래스 개념이라 생각하면 됨)
+        // 객체 생성자 함수는 첫글자 대문자로 작성(자바 클래스랑 같음)
+        function Student(name, major, age) {
+            this.name = name; 
+            this.major = major;
+            this.age = age;
+        }
+
+        // 인스턴스 생성
+        var s1 = new Student('이익준','외과',42);
+        var s2 = new Student('홍길동','사무라이',78);
+        var s3 = new Student("이순신","충무공",102);
+        var s4 = new Student("유관순","마미",11);
+        var s4 = new Student("임꺽정","돌쇄",89);
+
+        document.write("이름 : " + s1.name + "<br>");
+        document.write("전공 : " + s1.major + "<br>");
+        document.write("나이 : " + s1.age + "<br><hr>");
+
+        
+
+
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>

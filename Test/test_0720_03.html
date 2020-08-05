@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0720 3번</title>
+    <!-- 
+        1. 확인창으로부터 확인을 받아서 알림창에 결과를 출력하는 프로그램
+        확인창 메세지 : 공부를 계속 하시겠습니까?
+        알림창 메세지 : 네, 공부를 계속하겠습니다 / 아니오, 10분만 쉬었다가 공부하겠습니다.
+
+        확인창 : confrim
+     -->
+</head>
+<body>
+    <script>
+        var study = confirm("공부를 계속 하시겠습니까 ? ");
+        if(study == true){
+            alert("네, 공부를 계속하겠습니다");
+        } else {
+            alert("아니오, 10분만 쉬었다가 공부하겠습니다.");
+        }
+    </script>
+</body>
+</html>

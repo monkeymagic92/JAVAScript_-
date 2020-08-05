@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체 - 유효성 검사</title>
+</head>
+<body>
+    <script>
+        var userName = prompt("당신의 영문 이름은 ? ", "");
+
+        var upperName = userName.toUpperCase();
+        document.write(upperName + "<br><hr>");
+
+        var userNum = prompt("당신의 연락처는 ? ", "");
+
+        // 추천하는 방법
+        // 전화번호 뒷자리 4자리를 빼고, 뒤에 4자는 *로 연결
+        //var result = userNum.substring(0, userNum.length-4) + "****";   // substring 사용방법 (뒤에서 4개빼고)
+         var result = userNum.substring(0, userNum.length-4).concat("****"); // concat 사용방법 (뒤에서 4개빼고)
+        document.write(result + "<br><hr>");
+
+        
+
+
+
+    </script>
+</body>
+</html>

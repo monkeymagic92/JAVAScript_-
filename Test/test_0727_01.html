@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 사용 방법</title>
+    <style>
+        .container { width : 800px; margin: 30px auto; }
+        h2, h3 { text-align: center; }
+        .content1 { width: 600px; margin: 0 auto;}
+        .content1 > img {float: left; margin-right: 40px;}
+        .content1 ul { list-style: none; padding-top: 40px; margin-top: 50px;}
+        .content1 ul li { margin-bottom: 15px;}
+        .content1 li label { width : 80px; float: left; text-align: right; margin-right: 10px;}
+        .content1 li input { width: 150px; padding: 5px 10px; margin-right: 20px;}
+        .content1 li button { width: 170px; height: 35px; margin-left: 40px;
+        background-color: black; color:white; border: none; font-weight: bold; font-size: 0.9em;}
+        .content1 li:nth-child(3) {text-align: center;} 
+        .content1 li:nth-child(1) { margin-top: 20px;}       
+        #result { clear: both; text-align: center;} 
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>코리아 백화점</h2>
+        <h3>할인 판매</h3>
+        <div class="content1">
+            <img src="C:\JavaSpring\JavaScripts\js\js-images\ch03\sale.png" width="250" alt="">
+            <ul>
+                <li>
+                    <label for="price">정가</label>
+                    <input type="text" id="price">원
+                </li>
+                <li>
+                    <label for="rate">할인율</label>
+                    <input type="text" id="rate">%
+                </li>
+                <li>
+                    <button onclick="calcPrice()">할인가격 계산하기</button> 
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        function calcPrice() {
+            var originPrice = document.querySelector("#price").value; // 위에 만들어놓은 정가의 값을 동일한아이디를 이용해 받아옴
+            var rate = document.querySelector("#rate").value; // 할인율 아이디 rate 값을 받아옴
+            console.log(originPrice);
+            console.log(rate);
+            
+            // 자바스크립트를 활용한 유효성검사
+            if(originPrice == 0) {
+                alert("가격을 입력해주세요");
+            } else if (rate == 0) {
+                alert("할인률을 입력해주세요");
+            } else {
+                var salePrice = originPrice * (rate / 100); // 할인 가격 ex) 15000 * 0.1 = 1500원 할인
+                var resultPrice = originPrice - salePrice; // 실제 판매가 15000 - 1500 = 13500원
+
+                // 1. 알림창을 통한 출력
+                // alert("정가 : " + originPrice + "원\n할인률 : " + rate + "%\n판매가 : " + resultPrice);
+
+                // 2. 브라우저를 통한 출력
+                // - 문제점 : 새로운 창을 통해 결과를 출력
+                // document.write("정가 : " + originPrice + "원<br>할인 : " + rate + "%<br>판매가 : " + resultPrice);
+
+                // 3. 브라우저를 통한 출력 2
+                // innerHTML = 내용 ;    많이사용함 한번 익혀두기 
+                document.querySelector("#result").innerHTML = "정가 : " + originPrice + "원<br>할인됨" + rate + "%<br>판매가 : " + resultPrice;
+
+            }
+
+            
+        }
+    </script>
+    
+</body>
+</html>

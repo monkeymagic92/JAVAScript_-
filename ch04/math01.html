@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학 객체 p.95</title>
+</head>
+<body>
+    <script>
+        // p.95 (수학객체)
+        // Math 객체 사용 방법
+
+        // 절대값 Math.abs(n)
+        document.write("무조건 절대값 : " + Math.abs(-10) + "<br><hr>"); // 절대값 만드는 함수
+        document.write("무조건 절대값 : " + Math.abs(10) + "<br><hr>"); // 절대값 만드는 함수
+
+        
+        // 최대값
+        // Math.max(n, n, n, n, ... n) 매개변수중 최대값을 알려준다(안에 변수넣어도 됨)
+        // 문자열은 '비교불가'지만, 숫자 문자열은 '비교가능'
+        // 문자열을 넣으면 NaN이 뜸(숫자제외)
+        document.write("최대값 : " + Math.max(21, 35, 42.37, -10, "135") + "<br><hr>");
+
+        
+        // 최소값
+        // Math.min(n, n, n, n, ...n) 매개변수중 최소값을 알려준다(변수가능)
+        // 문자열은 '비교불가'지만, 숫자 문자열은 '비교가능'  
+        document.write("최소값 : " + Math.min(35, 11, -10, 2.5, "-20") + "<br><hr>");
+
+
+        // 제곱값
+        // Math.pow(n, n) 첫번째 매개변수 n(자연수) 에 두번째 매개변수 n을 제곱함
+        document.write("자연수제곱 : " + Math.pow(2, 3) + "<br><hr>");
+        document.write("실수제곱 : " + Math.pow(1.5, 5) + "<br><hr>");
+
+
+        // 랜덤값
+        // parseInt(Math.random() * n2 + n1) 최소숫자를 n1자리에 넣고 최대숫자(n2)를(최대수 - 최소수) + 1을 해주면됨
+        // ex) Math.random() * 16 + 5   -->  5~20 까지 랜덤 숫자를 나타냄
+        document.write("랜덤값(5~20) : " + parseInt(Math.random() * 16 + 5) + "<br><hr>");
+
+        // 0~10까지 랜덤값나타낼땐 *만 사용하고 나타내고자하는 최대숫자 + 1해주면 됨
+        // ex) Math.random() * 15   --> 0부터 14까지 나타냄
+        document.write("랜덤값(0~10) : " + parseInt(Math.random() * 11) + "<br><hr>");
+
+
+
+        // Math.round(n) : 반올림(5자리 이상은 반올림)
+        var n1 = 35.5
+        var n2 = 35.4
+        document.write("35.5 반올림 : " + Math.round(n1) + "<br><hr>");
+        document.write("35.4 반올림 : " + Math.round(n2) + "<br><hr>");
+
+
+        // ceil() : 무조건 반올림 (0.1~ 0.9)
+        // ceil 영어뜻 : 천장
+        document.write("35.4를 무조건 ceil을 사용하여 올림 : " + Math.ceil(n2) + "<br><hr>");
+
+
+        // floor() : 무조건 버림 (0.1~0.9를 그냥 버린다고 생각)
+        // floor 영어뜻 : 바닥
+        // ex) 35.9   -->   35
+        document.write("35.5를 floor() 사용하여 무조건 버림 : " + Math.floor(n1) + "<br><hr>");
+
+
+        // sqrt() : 루트값을 구해주는 함수
+        document.write("9의 루트값 : " + Math.sqrt(9) + "<br><hr>");
+        document.write("16의 루트값 : " + Math.sqrt(16) + "<br><hr>");
+
+
+
+        // PI (3.141592...... ) (소수점 이하 15자리까지 표시)
+        document.write("파이 값(pi) : " + Math.PI + "<br><hr>");
+
+
+        // 그외 sin, cos, tan, log, exp ... 등등있음 ( 궁금하면 구글 ㄱㄱ)
+        // 상수 : E, LN2, LN10 (로그) 
+       
+
+
+        
+    </script>
+</body>
+</html>

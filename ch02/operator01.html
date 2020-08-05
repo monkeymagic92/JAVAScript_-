@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <h3>연산자(operator)</h3>
+    <p>
+        1. 산술연산자(+, -, *, /, %)<br>
+        - / : 나누어서 몫값, % : 나누어서 나머지값<br>
+
+        2. 증감연산자 (++,--)<br>
+        - 증감연산자(++) : 변수의 앞 또는 뒤에 ++ 붙여 사용, 전위증가연산자, 후위증가연산자
+        - 감소연산자(--) : 변수의 앞 또는 뒤에 -- 붙여 사용, 전위감소연산자, 후위감소연산자
+        
+    </p>
+
+    <script>
+        var a = 30, b = 10;
+        c = a + b;
+        console.log("a + b = " +  c);
+
+        c = a - b;
+        console.log("a - b = " + c);
+
+        c = a * b;
+        console.log("a * b = " + c);
+
+        // 후위증가 ( 출력하고 값을 올림)
+        a++;
+        a++;
+        a++;
+        console.log(a);
+
+        // 전위증가 (값올리고 출력)
+        ++a;
+        ++a;
+        ++a;
+        console.log(a);
+
+    </script>
+
+</body>
+</html>

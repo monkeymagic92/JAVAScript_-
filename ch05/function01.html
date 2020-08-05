@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 1</title>
+    <!-- 
+        1. 자바스크립트에서는 메소드(method) 와 함수(function) 을 구분해서 사용
+
+        메소드 -> 객체의 멤버로 들어가 있는 것
+        함수 -> function 키워드를 만들어 사용하는 것
+
+        2. 함수(function) - 특정기능이나 작업을 수행하는 하나의 단위
+        3. 함수 '생성부분(함수정의)' 과 함수 사용부분(함수호출) 으로 나누어 짐.
+        4. 일반적으로는 함수를 사용하기 전에 생성하고, 다른 위치에서 호출하여 사용함
+
+     -->
+</head>
+<body>
+    <script>
+
+        // 1번
+        // 1부터 10까지의 합을 출력하는 함수
+        function sum1() {
+            var sum = 0;
+            for(var i=1; i<=10; i++) {
+                sum += i;
+            }
+            document.write("1부터 10까지의 합 : " + sum + "<br><hr>");
+        }        
+        // 함수 사용(함수 호출)
+        sum1();
+
+
+        //////////////////////////////////////////////////////////////////////
+
+        // 2번 - 매개변수를 가진 함수
+
+        function sum2(n) { // 매개변수(parameter)
+            var sum = 0;
+            for(var i=1; i<=n; i++) {
+                sum += i;
+            }
+            document.write("1부터 " + n + "까지의 합 : " + sum + "<br><hr>");
+        }
+        sum2(10);
+        sum2(20);
+
+        //////////////////////////////////////////////////////////////////////
+
+        // 3번 - 리턴값(반환값)을 가진 함수
+        // 1부터 n까지의 합을 구하는 함수
+        // 출력의 형태를 다양하게 표현
+        // 함수정의부분 
+        function sum3(n) {
+            var sum = 0;
+            for(var i=1; i<=n; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        
+        // 함수 호출
+        var result = sum3(10);
+        document.write("리턴함수로 반환값을 받은 result값 : " + result + "<br><hr>");
+
+        
+        
+
+
+
+
+
+
+        
+    </script>
+</body>
+</html>

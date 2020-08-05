@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가위 / 바위 / 보 게임</title>
+    <style>
+        .container { width: 600px; margin: 30px auto;}
+        .container h1, .container p {text-align: center;}
+        .btn_img { text-align: center; margin-bottom: 30px;}
+        .btn_img button { background-color: white;}
+        .user, .vs, .com { display:inline-block; text-align: center;}
+        .user, .com { width: 250px;}
+        .vs { width: 50px;}
+        .result #result1 {text-align:center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>가위/바위/보 게임</h1>
+        <p>아래의 이미지를 선택하면 게임이 시작 됩니다</p>
+        <div class="btn_img">
+            <button onclick="play(0)"><img src="images/img_0.png" width="100" alt=""></button>&nbsp;&nbsp; 
+            <button onclick="play(1)"><img src="images/img_1.png" width="100" alt=""></button>&nbsp;&nbsp;
+            <button onclick="play(2)"><img src="images/img_2.png" width="100" alt=""></button>&nbsp;&nbsp;
+        </div>
+        <div class="user">
+            <h3>사용자</h3>
+            <img src="" alt="" width="250" id="user_img">
+
+        </div>
+        <div class="vs"><h3>VS</h3></div>
+        <div class="com">
+            <h3>컴퓨터</h3>
+            <img src="" alt="" width="250" id="com_img">
+        </div>
+        <div class="result">
+            <h4 id="result1"></h4>
+            <p><span id="s1">0</span>전 <span id="s2">0</span>승 <span id="s3">0</span>패 <span id="s4">0</span>무승부</p>
+        </div>
+    </div>
+    
+    <script>
+        var tot = 0, win = 0, lose = 0, same = 0;  // 전역변수로 선언해서 승패를 += 누적시키기
+
+        function play(n) {
+            // 이미지 생성하는 방법
+
+            document.querySelector('#user_img').setAttribute('src', 'images/img_' + n + '.png');
+
+            // 컴퓨터의 난수 생성 : 0~2 중에서 난수 생성
+
+            var rn = parseInt(Math.random() * 3);
+            document.querySelector('#com_img').setAttribute('src', 'images/img_' + rn + '.png');
+
+            // 게임 결과
+            
+            ++tot;
+            document.querySelector('#s1').innerHTML = tot;  // HTML코드 아이디에 #(아이디이름) 해서 값을 집어넣겠다 
+            var result = n - rn;            
+            switch(result) {
+                case -2: case 1: 
+                document.querySelector("#result1").innerHTML = "사용자가 이겼습니다";
+                ++win;
+                document.querySelector('#s2').innerHTML = win;
+                break;
+
+                case -1: case 2:
+                document.querySelector("#result1").innerHTML = "컴퓨터가 이겼습니다";
+                ++lose;
+                document.querySelector('#s3').innerHTML = lose;
+                break;
+
+                case 0:
+                document.querySelector("#result1").innerHTML = "비겼습니다";
+                ++same;
+                document.querySelector('#s4').innerHTML = same;
+                break;
+            }
+        }
+    </script>
+    
+</body>
+</html>
